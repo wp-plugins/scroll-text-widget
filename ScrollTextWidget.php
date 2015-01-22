@@ -27,6 +27,84 @@
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+
+function add_menu_icons_styles(){
+?>
+<style type="text/css">
+#adminmenu #toplevel_page_stw_setting_page_slug div.wp-menu-image:before { content: "\f111"; }</style>
+<?php
+}
+
+add_action( 'admin_head', 'add_menu_icons_styles' );
+
+add_action( 'admin_menu', 'stw_menu_page' );
+add_action( 'admin_init', 'stw_setting_options' );
+
+function stw_setting_options() {
+	//register our settings
+	register_setting( 'baw-settings-group', 'stw_direction' );
+	register_setting( 'baw-settings-group', 'stw_speed' );
+	
+}
+
+function stw_menu_page(){
+    add_menu_page( 'Scrolling Text', 'Scrolling Text', 
+    	'manage_options',
+    	'stw_setting_page_slug', 
+    	'stw_setting_page', 
+    	plugins_url( 'ScrollTextWidget/icon.png' ), 6 ); 
+}
+
+function stw_setting_page(){
+?>
+
+<div class="wrap">
+<h2>Scrolling text widget settings</h2>
+
+<form method="post" action="options.php">
+    <?php settings_fields( 'baw-settings-group' ); ?>
+    <?php do_settings_sections( 'baw-settings-group' ); ?>
+    <table class="form-table">
+        <tr valign="top">
+        <th scope="row">Scrolling Direction</th>
+        <td><input type="text" name="stw_direction" value="<?php echo esc_attr( get_option('stw_direction') ); ?>" />
+			Two options only "up" or "down". If kept blank default option is up
+        </td>
+        </tr>
+         
+        <tr valign="top">
+        <th scope="row">Speed</th>
+        <td><input type="text" name="stw_speed" value="<?php echo esc_attr( get_option('stw_speed') ); ?>" />
+			Enter digit's only e.g. "2" or "3". If kept blank default option is 2.
+        </td>
+        </tr>
+        
+       
+    </table>
+    
+    <?php submit_button(); ?>
+
+</form>
+</div>
+
+<ul>
+	<li>Hello, Wordpress users, hope this plugin is useful in beautifiy your website.</li>
+	<li>Request you to provide review on this <a href="https://wordpress.org/plugins/scroll-text-widget/">plugin</a></li>
+	<li>You can also email me at brijeshmkt@gmail.com</li>
+	<li>You can also contact me for tasks like Wordpress customization, bespoke plugin development, customize existing plugin, woo commerce related task, creating shopping website in wordpress, Website speed related issue etc.</li>
+	
+</ul>
+    
+<?php    
+
+
+
+
+}
+
+
+
+
 class ScrollTextWidget extends WP_Widget{
 	
 	function __construct(){
@@ -68,12 +146,24 @@ class ScrollTextWidget extends WP_Widget{
 	
 	public function widget($args,$instance){
 		
+		if(get_option( 'stw_direction') == "down"){
+			$direction = 'down';
+		}else{
+			$direction = 'up';
+		}
+
+		if(get_option('stw_speed') == ""){
+			$speed = 2;
+		}else{
+			$speed = get_option('stw_speed');
+		}
+		
 		extract($args);
 		extract($instance);
 		
 		echo $before_widget;
 		echo $before_title . $title . $after_title;
-		echo '<marquee behavior="scroll" scrollAmount="2" direction="up">'.$description.'</marquee>';
+		echo '<marquee behavior="scroll" scrollAmount="'.$speed.'" direction="'.$direction.'">'.$description.'</marquee>';
 		echo $after_widget;
 		
 	}
