@@ -3,12 +3,29 @@
 * Plugin Name: Scroll Text Widget
 * Plugin URI: http://vinmosmedia.com
  * Description: Widget to scroll text vertically.
- * Version: 1.0
+ * Version: 1.1
  * Author: Brijesh Mishra
  * Author URI: http://vinmosmedia.com
  * License: A "Slug" license name e.g. GPL2
- * 
+ * Network: false
+ * License: A short license name. Example: GPL2
  */
+
+/*  Copyright 2014  Brijesh Mishra  (email : brijeshmkt@gmail.com)
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License, version 2, as 
+    published by the Free Software Foundation.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
 
 class ScrollTextWidget extends WP_Widget{
 	

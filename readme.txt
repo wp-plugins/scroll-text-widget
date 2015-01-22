@@ -3,8 +3,11 @@ Contributors: brijeshmkt
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NHM7FHNF2SMKY
 Tags: vertical scroll, text vertical scroll, scrolling text
 Requires at least: 3.0.1
-Tested up to: 3.8
-Stable tag: trunk
+Tested up to: 4.1
+Stable tag: 1.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
 
 
 Scroll Text Widget is a plugin to automically scroll up the content inserted in the description area of the widget.
@@ -18,6 +21,8 @@ Markdown parsed.
 * Show scrolling text on any page using sidebar 
 * Can be used as advertising, notice, important updates
 * Compatibility with many other plugins
+* Options to scroll text up or down
+* Options to increase or decrease speed of the scroll
 
 Follow me on Twitter to keep up with the latest updates [Brijesh Mishra](http://twitter.com/brijeshmkt/)
 == Installation ==
@@ -42,6 +47,11 @@ If you have to upgrade manually simply repeat the installation steps and re-enab
 
 
 == Changelog ==
+
+= 1.1 =
+* Added plugin setting page
+* Options to scroll text up or down
+* Options to increase or decrease speed of the scroll
 
 = 1.0 =
 * This is the first and latest version.
