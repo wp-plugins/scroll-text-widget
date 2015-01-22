@@ -16,13 +16,12 @@ Scroll Text Widget is a plugin to automically scroll up the content inserted in 
 
 Scroll Text Widget help you showcase your News, content, important notices on the website with scrolling up text.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+
 * Show scrolling text on any page using sidebar 
 * Can be used as advertising, notice, important updates
 * Compatibility with many other plugins
-* Options to scroll text up or down
-* Options to increase or decrease speed of the scroll
+* Option to scroll text up or down
+* Option to increase or decrease speed of the scroll
 
 Follow me on Twitter to keep up with the latest updates [Brijesh Mishra](http://twitter.com/brijeshmkt/)
 == Installation ==
@@ -43,7 +42,13 @@ If you have to upgrade manually simply repeat the installation steps and re-enab
 
 == Frequently Asked Questions ==
 
+= Can I change the direction of scroll? =
 
+Yes, you can change the direction of scrolling text up or down from the plugin setting options given in the admin section of wordpress.
+
+= Can I change speed of scroll? =
+
+Yes, you can change the speed of scroll from the plugin setting options given in the admin section of wordpress.
 
 
 == Changelog ==
